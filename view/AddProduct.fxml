@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory.view.AddProductController">
+   <children>
+      <Label layoutX="15.0" layoutY="15.0" text="Add Product">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="275.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleSearchParts" text="Search" />
+      <TextField fx:id="searchPartsField" layoutX="345.0" layoutY="20.0" />
+      <AnchorPane layoutX="15.0" layoutY="50.0" prefHeight="325.0" prefWidth="235.0">
+         <children>
+            <Label layoutX="10.0" layoutY="15.0" text="Product ID">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="65.0" text="Product Name">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="115.0" text="Inventory">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="165.0" text="Price">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="215.0" text="Minimum">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="265.0" text="Maximum">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="productIDField" editable="false" layoutX="105.0" layoutY="15.0" opacity="0.35" prefHeight="25.0" prefWidth="125.0" />
+            <TextField fx:id="productNameField" layoutX="105.0" layoutY="65.0" prefHeight="25.0" prefWidth="125.0" />
+            <TextField fx:id="productInventoryField" layoutX="105.0" layoutY="115.0" prefHeight="25.0" prefWidth="125.0" />
+            <TextField fx:id="productCostField" layoutX="105.0" layoutY="165.0" prefHeight="25.0" prefWidth="125.0" />
+            <TextField fx:id="productMinField" layoutX="105.0" layoutY="215.0" prefHeight="25.0" prefWidth="60.0" />
+            <TextField fx:id="productMaxField" layoutX="105.0" layoutY="265.0" prefHeight="25.0" prefWidth="60.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="255.0" layoutY="50.0" prefHeight="325.0" prefWidth="397.0">
+         <children>
+            <TableView fx:id="partsInventory" prefHeight="125.0" prefWidth="390.0">
+              <columns>
+                <TableColumn fx:id="inventoryIDColumn" text="Part ID" />
+                <TableColumn fx:id="inventoryNameColumn" prefWidth="145.0" text="Part Name" />
+                  <TableColumn fx:id="inventoryInventoryColumn" text="Inventory" />
+                  <TableColumn fx:id="inventoryCostColumn" text="Price / Unit" />
+              </columns>
+            </TableView>
+            <Button layoutX="317.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleAdd" text="Add" />
+            <TableView fx:id="partsInProduct" layoutY="162.0" prefHeight="125.0" prefWidth="390.0">
+               <columns>
+                  <TableColumn fx:id="partsIDColumn" text="Part ID" />
+                  <TableColumn fx:id="partsNameColumn" prefWidth="145.0" text="Part Name" />
+                  <TableColumn fx:id="partsInventoryColumn" text="Inventory" />
+                  <TableColumn fx:id="partsCostColumn" text="Price / Unit" />
+               </columns>
+            </TableView>
+            <Button layoutX="312.0" layoutY="293.0" mnemonicParsing="false" onAction="#handleDelete" text="Delete" />
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" layoutY="428.0" prefHeight="17.0" prefWidth="600.0" text="C482 Inventory System (Cody Eklov)" />
+      <ButtonBar layoutX="198.0" layoutY="375.0" prefHeight="40.0" prefWidth="180.0">
+         <buttons>
+            <Button mnemonicParsing="false" onAction="#handleSave" text="Save">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#handleCancel" text="Cancel">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </buttons>
+      </ButtonBar>
+   </children>
+</AnchorPane>
